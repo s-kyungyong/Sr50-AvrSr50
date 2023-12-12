@@ -56,13 +56,16 @@ For AlphaLink2, we used [our customized Colab notebook](), which has a slight mo
 For ColabDock, we also have [a cuscomized Colab notebook](), which comes from this [this notebook](https://colab.research.google.com/github/JeffSHF/ColabDock/blob/dev/ColabDock.ipynb). As AlphaLink2, the restraints can be manually defined as variables. This notebook will ask for an input structure. ColabDock.input.pdb in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) can be uploaded. This PDB file contains the LRR domain of Sr50 (521-956) and the mature protein of AvrSr50 with its chain ID assigned to B. We failed to run the notebook with the free T4 GPUs, and high memory GPUs will be needed for this job. Furthermore, ColabDock occasionally disort the input structures to meet the docking restraints. In this case, we remodel the pose by submitting the best model to ColabFold as a template, as outlined above. 
 
 
+max_recyling_iters: 8 
+
 ### Model II
 
 Model II were generated with the following restraints for Sr50 and AvrSr50. The position for AvrSr50 is based on the mature protein.
 ```
-R688  Q99
 K711  Q99
+K711  N102
 K824  E95
+R904  E93
 R904  E95
 ```
 
@@ -70,9 +73,10 @@ R904  E95
 ### Model III
 ```
 ++R904  Q68
-R688  Q99
 K711  Q99
+K711  N102
 K824  E95
+R904  E93
 R904  E95
 ```
 
