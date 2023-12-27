@@ -61,12 +61,10 @@ save avrb.pdb
 
 
 For ColabDock, we also have [a cuscomized Colab notebook](), which comes from this [this notebook](https://colab.research.google.com/github/JeffSHF/ColabDock/blob/dev/ColabDock.ipynb). As AlphaLink2, the restraints can be manually defined as variables. This notebook will ask for an input structure. ColabDock.input.pdb in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) can be uploaded. This PDB file contains the LRR domain of Sr50 (521-956) and the mature protein of AvrSr50 with its chain ID assigned to B. We failed to run the notebook with the free T4 GPUs, and high memory GPUs will be needed for this job. Furthermore, ColabDock occasionally disort the input structures to meet the docking restraints. In this case, we remodel the pose by submitting the best model to ColabFold as a template, as outlined above. 
-PyMOL>select effector, (resi 561-629)
- Selector: selection "effector" defined with 592 atoms.
-PyMOL>alter effector, chain='B'
-PyMOL>alter effector, resi=int(resi)-560
-PyMOL>alter (chain A), resi=int(resi)+487
-max_recyling_iters: 5 
+PyMOL>alter (chain A), resi=int(resi)+427
+
+
+max_recyling_iters: 3
 
 ### Model II
 
