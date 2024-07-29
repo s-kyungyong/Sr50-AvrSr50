@@ -188,3 +188,37 @@ bfe83166-d286-44b3-ad6a-88c693421a68
 mafft --maxiterate 1000 --globalpair --thread 56 Sr50.family.LRR.only.cd-hit.c0.98 > Sr50.family.LRR.only.cd-hit.c0.98.msa.fasta
  
  Remove TraesCS1A02G028700.1 - > almost all positiosn are gaps
+
+
+
+GROMACS
+ftp://ftp.gromacs.org/gromacs/gromacs-2024.2.tar.gz
+tar xzf gromacs-2024.2.tar.gz
+cd gromacs-2024.2
+module load cmake gcc cuda openmpi
+mkdir build && cd build
+cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DGMX_GPU=CUDA
+make
+make check
+make install
+
+bash GROMACS_AMBER.sh -t Sr50 -ntmpi 56 -setup -pdb 1st_best_relaxed_reindexed.pdb
+bash GROMACS_AMBER.sh -t Sr50 -ntmpi 56 -nvt -pdb 1st_best_relaxed_reindexed.pdb
+bash GROMACS_AMBER.sh -t Sr50 -ntmpi 56 -npt -pdb 1st_best_relaxed_reindexed.pdb
+gmx grompp -f md.mdp -c npt.gro -p topol.top -o Sr50 -quiet -maxwarn 2
+gmx mdrun -v -deffnm Sr50 -ntmpi 1 -ntomp 8 -pme gpu -nb gpu -nsteps 50000000
+
+gmx pdb2gmx -f 1st_best_relaxed_reindexed.pdb -o 1st_best.gro -ignh -water spce
+1 #AMBER03 protein, nucleic AMBER94 (Duan et al., J. Comp. Chem. 24, 1999-2012, 2003)
+gmx editconf -f 1st_best.gro -o box.gro -c -d 1.0 -bt cubic
+gmx solvate -cp box.gro -cs spc216.gro -o solvated.gro -p topol.top
+gmx grompp -f ions.mdp -c solvated.gro -p topol.top -o ions.tpr -maxwarn 2
+gmx genion -s ions.tpr -o solvated_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.15
+SOL 
+gmx grompp -f minim.mdp -c solvated_ions.gro -p topol.top -o em.tpr
+gmx mdrun -v -deffnm em -ntmpi 56 -nb cpu
+
+
+gmx grompp -f equil.mdp -c em.gro -r em.gro -p topol.top -o equil.tpr
+gmx mdrun -v -deffnm equil
+
