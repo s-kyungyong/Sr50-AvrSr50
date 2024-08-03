@@ -115,7 +115,8 @@ Unfortunately, there is no 'right' parameters for ColabDock. We observed that Co
 
 ## 3. Final structural hypothesis (Model IV)
 
-The last structural hypothesis is a simple refiement of Model III using the methedology outlined in section 1. Change the chain ID for AvrSr50 to 'A' with a 200 index gap and submit this to ColabFold as a template. Make sure to relax the side chains with Amber relaxation. Default parameters were fine. For this model, we used alphafold2_multimer_v3. 
+The last structural hypothesis is a simple refiement of Model III using the methedology outlined in section 1. Change the chain ID for AvrSr50 to 'A' with a 200 index gap and submit this to ColabFold as a template. The processed template is available in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) and is named as *m3nl.pdb*.
+Make sure to relax the side chains with Amber relaxation. Default parameters were fine. For this model, we used alphafold2_multimer_v3. 
 
 ```
 num_relax: 0
@@ -126,7 +127,7 @@ model_type: alphafold2_multimer_v3
 
 ## 4. AlphaFold-deriven models of Sr50 and AvrSr50
 
-Some AlphaFold models showed great similarity to our Model IV. Those models were predicted with ColabFold with the following parameters. For the template, we used the structure of AvrSr50 QCMJC (PDB:7MQQ) with lopp regions removed. This structure can be found in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) and is named as 'nolp.pdb'.
+Some AlphaFold models showed great similarity to our Model IV. Those models were predicted with ColabFold with the following parameters. For the template, we used the structure of AvrSr50 QCMJC (PDB:7MQQ) with lopp regions removed. This structure can be found in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) and is named as *nolp.pdb*.
 ```
 num_relax: 1
 template_mode: custom
