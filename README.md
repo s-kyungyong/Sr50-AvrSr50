@@ -105,7 +105,7 @@ Chain A: 0.95
 Chain B: 0.95
 ```
 
-The structure needs to be relaxed after the prediction with ColabDock, using the Amber relaxation outlined above. Then, re-index the structure in PyMOL so that the residue index is consistent. 
+The best structure (1st_best.pdb) was used for the analyses. The structure needs to be relaxed after the prediction with ColabDock, using the Amber relaxation outlined above. Then, re-index the structure in PyMOL so that the residue index is consistent. 
 ```
 alter (chain A), resi=int(resi) + 427
 alter (chain B), resi=int(resi) - 579
