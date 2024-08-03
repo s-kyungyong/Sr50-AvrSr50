@@ -138,6 +138,8 @@ pair_mode: unpaired
 
 ## 5. Evolutionary analyses
 
+The Shannon entropy can be found in [this repository](https://github.com/krasileva-group/Sr33-Sr50_analysis) and is associated with [the previous study](https://apsjournals.apsnet.org/doi/full/10.1094/MPMI-07-22-0154-R?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org).
 
+Happy modeling! 
 
 
