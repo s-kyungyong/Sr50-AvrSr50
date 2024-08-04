@@ -65,7 +65,7 @@ Once the model is modified, it can be relaxed with [amber](https://colab.researc
 
 ## 2. Refinement of structural hypotheses
 
-We used [ColabDock](https://github.com/JeffSHF/ColabDock) to refine our structural hypotheses and derive Model II and III. [A cuscomized Colab notebook]() was used, which mostly comes from this [this notebook](https://colab.research.google.com/github/JeffSHF/ColabDock/blob/dev/ColabDock.ipynb). This notebook will ask for an input structure. *ColabDock.input.pdb* in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) can be uploaded. This PDB file contains the partial NB-ARC domain (428-520), the full LRR domain of Sr50 (521-956) and the mature protein of AvrSr50 with its chain ID assigned to B. These are created from *Sr50.pdb* and *AvrSr50.pdb* in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files). The partial NB-ARC domain acts as constaints to prevent the effector to be inserted to deep. ColabDock uses a lot of memory, so A40 will be necessary to run this job. 
+We used [ColabDock](https://github.com/JeffSHF/ColabDock) to refine our structural hypotheses and derive Model II and III. [A cuscomized Colab notebook](https://github.com/s-kyungyong/Sr50-AvrSr50/blob/main/files/ColabDock_ipynb.ipynb) was used, which mostly comes from this [this notebook](https://colab.research.google.com/github/JeffSHF/ColabDock/blob/dev/ColabDock.ipynb). This notebook will ask for an input structure. *ColabDock.input.pdb* in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files) can be uploaded. This PDB file contains the partial NB-ARC domain (428-520), the full LRR domain of Sr50 (521-956) and the mature protein of AvrSr50 with its chain ID assigned to B. These are created from *Sr50.pdb* and *AvrSr50.pdb* in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files). The partial NB-ARC domain acts as constaints to prevent the effector to be inserted to deep. ColabDock uses a lot of memory, so A40 will be necessary to run this job. 
 
 ### Model II and III 
 
@@ -168,6 +168,8 @@ ARSLIKTDWSGSEYTILGANHYEEPNTGAAAQFPGTMAEDDGRSPYIVRKLRNSSGKRFYVFTDHPQQPIIWNPHEEIEI
 
 The data used for the evolutionary analyses come from [this repository](https://github.com/krasileva-group/Sr33-Sr50_analysis) and is associated with [the previous study](https://apsjournals.apsnet.org/doi/full/10.1094/MPMI-07-22-0154-R?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org).
 
+
+_________________________
 Happy modeling! 
 
 
