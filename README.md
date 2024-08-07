@@ -1,6 +1,6 @@
 # Engineering the plant intracellular immune receptor Sr50 to restore recognition of the AvrSr50 escape mutant
 
-Here, the descriptions detail the method we used to derive our models used as our structural hypotheses for [our recent preprint](). You can also access other files through [Zenodo]().
+Here, the descriptions detail the method we used to derive our models used as our structural hypotheses for [our recent preprint](). You can also access other files through [Zenodo](https://zenodo.org/doi/10.5281/zenodo.13205869).
 
 # 1. Initial structural hypothesis generation (Model I)
 
@@ -8,7 +8,7 @@ Here, the descriptions detail the method we used to derive our models used as ou
 The predicted structures of Sr50 and AvrSr50 can be found in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files). These structures were submitted as a receptor and a ligand, respectively, to [ZDOCK](https://zdock.umassmed.edu/), [HDOCK](http://hdock.phys.hust.edu.cn/) and [ClusPro](https://cluspro.bu.edu/login.php) online servers. The default parameters were used, and no restraints were set. 
 
 ### Identification of the candidate poses
-All docking models can be downloaded from [Zenodo](): 'All_docking_models.zip'. There are two more input files needed to run this step: Tomborski_2022_Sr50_group_entropy.txt and Sr50.LRR.targets.txt. These files contain entropy calculation for each residue, which comes from [this publication](https://apsjournals.apsnet.org/doi/full/10.1094/MPMI-07-22-0154-R), and the LRR residues that compise inner concave of Sr50's LRR domain based on the predicted Sr50 structure. These files are available in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files). Then, run the following script in [scripts](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/scripts).
+All docking models can be downloaded from [Zenodo](https://zenodo.org/doi/10.5281/zenodo.13205869): 'All_docking_models.zip'. There are two more input files needed to run this step: Tomborski_2022_Sr50_group_entropy.txt and Sr50.LRR.targets.txt. These files contain entropy calculation for each residue, which comes from [this publication](https://apsjournals.apsnet.org/doi/full/10.1094/MPMI-07-22-0154-R), and the LRR residues that compise inner concave of Sr50's LRR domain based on the predicted Sr50 structure. These files are available in [files](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/files). Then, run the following script in [scripts](https://github.com/s-kyungyong/Sr50-AvrSr50/tree/main/scripts).
 ```
 python find_candidate.py
 ```
@@ -61,7 +61,7 @@ alter (effector), chain="B"
 alter (chain B), resi=int(resi)-1156
 save Zdock1_c8745_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.reindexed.pdb
 ```
-Once the model is modified, it can be relaxed with [amber](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/beta/relax_amber.ipynb). The three final structures were our Model I (Zdock1) and Alternative models I (Zodock13) and II (Zdock5). These files are available in [Zenodo](). 
+Once the model is modified, it can be relaxed with [amber](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/beta/relax_amber.ipynb). The three final structures were our Model I (Zdock1) and Alternative models I (Zodock13) and II (Zdock5). These files are available in [Zenodo](https://zenodo.org/doi/10.5281/zenodo.13205869). 
 
 ## 2. Refinement of structural hypotheses
 
